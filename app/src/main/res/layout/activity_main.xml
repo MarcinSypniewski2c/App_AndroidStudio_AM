@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4B3FFFC"
+
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="99dp"
+        android:layout_height="35dp"
+        android:background="#CA8E27"
+        android:onClick="temp_start"
+        android:text="start"
+        android:textSize="7sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="99dp"
+        android:layout_height="35dp"
+        android:background="#CA8E27"
+        android:onClick="temp_stop"
+        android:text="stop"
+        android:textSize="7sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <Button
+        android:id="@+id/set_st"
+        android:layout_width="69dp"
+        android:layout_height="31dp"
+        android:onClick="set_sample_time"
+        android:text="Set"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/sample_time"
+        android:layout_width="51dp"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1000"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="167dp"
+        android:layout_height="30dp"
+        android:text="Sample Time [ms]"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <Button
+        android:id="@+id/list_btn"
+        android:layout_width="159dp"
+        android:layout_height="55dp"
+        android:onClick="list_change"
+        android:text="go list"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_st"
+        app:layout_constraintVertical_bias="0.525" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="363dp"
+        android:layout_height="370dp"
+        android:isScrollContainer="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Temperature"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_temp"
+                android:layout_width="283dp"
+                android:layout_height="212dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_gravity="end"
+                android:background="#F44336"
+                android:onClick="reset_temp_graph"
+                android:text="Clear"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:text="Pressure"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_pres"
+                android:layout_width="283dp"
+                android:layout_height="212dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_gravity="end"
+                android:background="#F44336"
+                android:onClick="reset_pres_graph"
+                android:text="Clear"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
